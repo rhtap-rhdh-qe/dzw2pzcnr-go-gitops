@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dzw2pzcnr-go-gitops
+  description: This is GitOps manifest for dzw2pzcnr-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=dzw2pzcnr-go
+    backstage.io/kubernetes-id: dzw2pzcnr-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: dzw2pzcnr-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dzw2pzcnr-go
